@@ -67,3 +67,4 @@ wrapt==2.1.2
 prometheus_client==0.17.0
 redis==5.0.8
 python-multipart==0.0.9
+openai>=1.0.0
