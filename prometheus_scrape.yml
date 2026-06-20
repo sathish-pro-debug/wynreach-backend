@@ -1,0 +1,19 @@
+# Prometheus scrape config snippet — add to your prometheus.yml `scrape_configs`
+# Example:
+# scrape_configs:
+#   - job_name: 'wynreach-backend'
+#     static_configs:
+#       - targets: ['backend-host:8000']
+#     metrics_path: /api/metrics/prometheus
+#     scheme: https
+#     # If you protect with API key, use basic auth or relabeling/headers via a proxy
+#     # If you require JWT, configure Prometheus to use bearer token (bearer_token_file)
+
+- job_name: 'wynreach-backend'
+  metrics_path: /api/metrics/prometheus
+  scheme: http
+  static_configs:
+    - targets: ['localhost:8000']
+  # If your endpoint requires a bearer token, set `bearer_token_file` to a file with the token
+  # bearer_token_file: /etc/prometheus/admin_token
+  # If using an API key header, run Prometheus behind a reverse proxy that injects the header.
